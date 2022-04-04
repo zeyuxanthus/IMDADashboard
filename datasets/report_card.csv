@@ -1,0 +1,10 @@
+Name,Age,Python,DWH,Java,Linux,Hadoop,Apache Hive,Spark,Absence(Day),Projects,Probation,Feedbacks,Completed Module,Total Module,Region,Title
+Kean Onn,29,84,65,,,,,,0,"Report Card, Temasek",N,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Zeyu,28,83,53,,,,,,0,"Report Card, Temasek",N,"[{'Python': 'Great'},{'DWH': 'Learn SQL and Data Structures'}]",2,7,SG,IMDA Data engineer Academy
+Justin,26,69,53,,,,,,0,Data populating,Y,"[{'Python': 'Good'},{'DWH': 'Learn SQL with good foundation'}]",2,7,SG,IMDA Data engineer Academy
+Jessie,24,68,69,,,,,,0,,Y,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Johnny,26,93,73,,,,,,0,"OCBC, Temasek",Y,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Luiz,29,54,80,,,,,,1,"OCBC, Temasek",N,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Barry,26,74,87,,,,,,0,,Y,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Ummul,24,75,76,,,,,,0,"OCBC, Data populating",Y,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
+Ben,28,68,76,,,,,,0,,Y,"[{'Python': 'Good'},{'DWH': 'Learn the basic'}]",2,7,SG,IMDA Data engineer Academy
