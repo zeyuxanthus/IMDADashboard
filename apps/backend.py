@@ -59,3 +59,12 @@ def project(df):
         string = 'Not involved in any project in the moment.'
 
     return string
+
+def getModules():
+    return modules
+
+def returnScores(data, module):
+    df = pd.DataFrame.from_dict(data)
+    avg = round(df[module].mean(),0)
+    df = df[['Name', module]]
+    return df, avg

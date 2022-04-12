@@ -1,13 +1,14 @@
 import dash
 from dash import html
 from dash import dcc
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 from dash import callback_context
 import dash_bootstrap_components as dbc
 
 import apps.backend as be
 from app import app
+import plotly.express as px
 
 
 layout = html.Div([
@@ -38,9 +39,35 @@ def getStudent(df):
     ], className= 'row flex-display', style={'margin-top': '50px'})
 
 def getModule(df):
+    getModule = be.getModules()
+
     return html.Div([
-        html.P(['Module'], style = {'color': 'White', 'fontSize':40, 'text-align': 'center'})
-    ])
+        dcc.Store(id='stored-data', data = df.to_dict('records')),
+        html.Div([
+            dcc.Dropdown(options = getModule, id = 'Module')
+        ], className='one-third column'),
+        html.Div(id = "modulesGraph", className='one-half column')
+    ], className= 'row flex-display', style={'margin-top': '50px'})
+    
+
+@app.callback(
+    Output('modulesGraph', 'children'),
+    Input('Module', 'value'),
+    State('stored-data','data')
+)
+def moduleCallBack(value, data):
+    if value is None:
+        return dash.no_update 
+    else:
+        df, avg = be.returnScores(data, value)
+
+        fig = px.bar(df, x = df['Name'], y= df[value])
+        fig.add_hline(y=avg,
+                    line_dash="dot",
+                    annotation_text="Average score")
+        fig.update_layout(yaxis = dict(title = f'{value} Scores'))
+
+        return dcc.Graph(figure=fig)
 
 @app.callback(
     Output('student-id', 'children'),
